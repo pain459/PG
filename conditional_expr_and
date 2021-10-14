@@ -1,0 +1,10 @@
+SELECT * FROM customer
+
+-- Using general case statements to segregate the customers.
+SELECT customer_id,
+CASE 
+	WHEN (customer_id <= 100) THEN 'Premuim'
+	WHEN (customer_id BETWEEN 100 and 200) THEN 'Plus'
+	ELSE 'Normal'
+END AS customer_class
+FROM customer
